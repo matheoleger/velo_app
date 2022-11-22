@@ -1,7 +1,7 @@
 package com.formation.velo.controllers;
 
-import com.formation.velo.model.Stations;
-import com.formation.velo.service.StationsService;
+import com.formation.velo.model.Defibrillator;
+import com.formation.velo.service.DefibrillatorService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,17 +16,17 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class DefibrillatorController {
 
-    private final StationsService stationsService;
+    private final DefibrillatorService defibrillatorService;
 
-	public DefibrillatorController(StationsService stationsService) {
-		this.stationsService = stationsService;
+	public DefibrillatorController(DefibrillatorService defibrillatorService) {
+		this.defibrillatorService = defibrillatorService;
 	}
 
     @GetMapping("defibrillators")
-	public ResponseEntity<List<Stations>> getAll(){
-		stationsService.saveRecords();
-		List<Stations> stations = stationsService.findAll();
+	public ResponseEntity<List<Defibrillator>> getAll(){
+		defibrillatorService.saveRecords();
+		List<Defibrillator> defibrillator = defibrillatorService.findAll();
 
-		return ResponseEntity.ok(stations);
+		return ResponseEntity.ok(defibrillator);
 	}
 }
