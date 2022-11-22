@@ -76,8 +76,8 @@ public class DefibrillatorServiceImpl implements DefibrillatorService {
                     defibrillator.get().setClosingTime(record.getField().getClosingTime());
                     defibrillator.get().setOpeningDays(record.getField().getOpeningDays());
                     defibrillator.get().setPosition(record.getField().getPosition());
-                    defibrillator.get().setLongitude(record.getField().getGeoShape().getCoordinates()[1]);
-                    defibrillator.get().setLatitude(record.getField().getGeoShape().getCoordinates()[0]);
+                    defibrillator.get().setLongitude(record.getField().getGeoShape().getCoordinates()[0]);
+                    defibrillator.get().setLatitude(record.getField().getGeoShape().getCoordinates()[1]);
                     defibrillator.get().setAddress(record.getField().getAddress());
                     //save defibrillator
                     save(defibrillator.get());
@@ -90,8 +90,8 @@ public class DefibrillatorServiceImpl implements DefibrillatorService {
                         .openingTime(record.getField().getOpeningTime())
                         .closingTime(record.getField().getClosingTime())
                         .position(record.getField().getPosition())
-                        .latitude(record.getField().getGeoShape().getCoordinates()[0])
-                        .longitude(record.getField().getGeoShape().getCoordinates()[1])
+                        .latitude(record.getField().getGeoShape().getCoordinates()[1])
+                        .longitude(record.getField().getGeoShape().getCoordinates()[0])
                         .address(record.getField().getAddress())
                         .build();
                     //save defibrillator
